@@ -1,0 +1,101 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Index</title>
+    <partial name="css" />
+    <script>
+        var rootPath = '@Url.Action("")';
+        var domain = '@Context.Request.Scheme://@Context.Request.Host.Value/';
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-expand-md navbar-dark d-print-none">
+        <div class="navbar-brand">
+            <a href="#" class="d-inline-block">
+                <img src="/global_assets/images/logo_icon_light.png" />
+            </a>
+        </div>
+        <div class="d-md-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                <i class="icon-tree5"></i>
+            </button>
+            <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+                <i class="icon-paragraph-justify3"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+                        <i class="icon-paragraph-justify3"></i>
+                    </a>
+                </li>
+            </ul>
+            <span class="navbar-text ml-md-3 mr-md-auto">
+                <span class="badge bg-success">Online</span>
+            </span>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown dropdown-user">
+                    <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
+                        <img src="" class="rounded-circle" alt="">
+                        <span>Delta</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="javascript:void(0)" data-nav="change-password" class="dropdown-item"><i class="icon-cog52"></i> Change Password </a>
+                        <a href="@Url.Action("logoff","user")" class="dropdown-item logoff"><i class="icon-switch2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="sidebar sidebar-dark sidebar-main sidebar-expand-md d-print-none">
+            <div class="sidebar-mobile-toggler text-center">
+                <a href="#" class="sidebar-mobile-main-toggle">
+                    <i class="icon-arrow-left8"></i>
+                </a>
+                Navigation
+                <a href="#" class="sidebar-mobile-expand">
+                    <i class="icon-screen-full"></i>
+                    <i class="icon-screen-normal"></i>
+                </a>
+            </div>
+            <partial name="aside" />
+          </div>
+        <div class="content-wrapper">
+            <div class="content">
+                <div id="" class="container">
+                    <div header-title="true"></div>
+                    <div work-space="true">
+                        @RenderBody()
+                    </div>
+                </div>
+
+            </div>
+            <div class="navbar navbar-expand-lg navbar-light d-print-none">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                        <i class="icon-unfold mr-2"></i>
+                        Footer
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-footer">
+                    <span class="navbar-text">
+                        &copy; Inventory <a href="#"></a> Management <a href="#" target="_blank"></a>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<partial name="js" />
+@RenderSection("Scripts", required: false)
+</html>

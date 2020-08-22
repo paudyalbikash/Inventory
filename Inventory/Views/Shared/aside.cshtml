@@ -1,0 +1,84 @@
+﻿@*@{ 
+    var granted = AppSystem.Models.SessionData.CurrentUser.Modules;
+    if (granted == null)
+        granted = new List<AppSystem.Models.GrantedModule>();
+    else
+        granted = granted.Where(x => x.AccessStatus).ToList();
+}*@
+<div class="sidebar-content d-print-none">
+    <div class="sidebar-user">
+        <div class="card-body">
+            <div class="media">
+                <div class="mr-3">
+                    <a href="#">
+                        <img src="~/assets/images/gov.png" width="38" height="38" class="rounded-circle" alt="">
+                    </a>
+                </div>
+                <div class="media-body">    
+                    <div class="media-title font-weight-semibold">Delta</div>
+                    <div class="font-size-xs opacity-50">
+                    </div>
+                </div>
+                <div class="ml-3 align-self-center">
+                    <a href="#" class="text-white"><i class="icon-cog3"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card card-sidebar-mobile">
+        <ul class="nav nav-sidebar" data-nav-type="accordion">
+
+            <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link" data-nav="dashboard">
+                    <i class="fa fa-tachometer fa-lg" aria-hidden="true"></i>
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link" data-nav="product">
+                    <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                    <span>
+                        Product
+                    </span>
+                </a>
+            </li>
+            
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="fa fa-cogs"></i> <span>Setup</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Setup">
+                        <li class="nav-item">
+                            <a class="nav-link" data-nav="unit" href="javascript:void(0)">Unit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-nav="fiscalyear" href="javascript:void(0)">Fiscal Year</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-nav="customer" href="javascript:void(0)">Customer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-nav="vendor" href="javascript:void(0)">Vendor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-nav="product-classification" href="javascript:void(0)">Product Classification</a>
+                        </li>
+                    </ul>
+                </li>
+            
+           
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Users</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Farmers">
+                        <li class="nav-item">
+                            <a class="nav-link" data-nav="user-management" href="javascript:void(0)">User List</a>
+                        </li>
+
+                    </ul>
+                </li>
+           
+        </ul>
+    </div>
+</div>
